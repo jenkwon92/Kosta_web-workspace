@@ -11,6 +11,6 @@ HTML : HyperText Markup Language
 
 CSS : 웹 문서의 디자인 스타일 및 레이아웃을 담당
 
-JaaScript : 웹 문서의 행위를 담당
+JavaScript : 웹 문서의 행위를 담당
 
 XML : 주로 설정 정보를 명시할 때 사용
