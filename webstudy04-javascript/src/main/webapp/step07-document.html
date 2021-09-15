@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript dom 제어연습</title>
+<script>
+	function moveTxt() {
+		/* let orgComp = document.getElementById("orgTxt");
+		let destComp = document.getElementById("destTxt");
+		destComp.value=orgComp.value;
+		orgComp.value="";
+		orgComp.focus(); */
+
+		//1. 가능한지 물어보기 1 -> 강사님이 let선언을 해주어야한다고하심
+		/* 	destTxt.value=orgTxt.value;
+			orgTxt.value=""; */
+
+		//2. 가능한지 물어보기 2
+			/*  let orgComp = document.getElementById("orgTxt").value;
+			document.getElementById("destTxt").value = orgComp;  //여기까지 코드로는 가능하지만
+			orgComp = ""; //이부분에서 객체까지 도달이 되지않아 비워지지 않는다
+			//만약 비워주고 싶다면
+			//document.getElementById("orgTxt").value= ""; //이 방식으로 비워지긴 하지만 19번 코드와 중복 */
+
+		//3. 가능한지 물어보기 3	 
+		//궁금한점은 꼭  document.getElementById("destTxt").value 이걸 let으로 선언해주어야하는가
+			let orgComp = document.getElementById("orgTxt");
+			document.getElementById("destTxt").value = orgComp.value;
+			orgComp.value="";
+	}
+	
+	function enterKey(){
+		//alert("눌렀지?");
+		if(event.keyCode==13){
+			//alert("엔터키눌렀지?");
+			moveTxt();
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="orgTxt" autofocus="autofocus" onkeyup="enterKey()">
+	<input type="button" value="이동" onclick="moveTxt()">
+	<input type="text" id="destTxt">
+	<!-- 
+	orgTxt id text요소에 값을 입력한 후 이동 버튼을 누르면
+	destTxt id text 요소에 값이 이동된다.
+ -->
+</body>
+</html>

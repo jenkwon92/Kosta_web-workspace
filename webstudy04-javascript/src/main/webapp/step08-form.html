@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form 입력양식 체크</title>
+<script type="text/javascript">
+	function checkForm(){
+		if(document.getElementById("userName").value.trim()==""){ //trim()으로 여백제거
+			alert("이름을 입력하세요");
+		}else if(isNaN(document.getElementById("depositMoney").value)){ //isNaN()으로 숫자여부를 체크
+			alert("입금액은 숫자로 입력하세요");
+		}else{
+			alert("입금완료");
+		}
+	}
+</script>
+</head>
+<body>
+	<form>
+		이름<input type="text" id="userName">
+		입금액 <input type="text" id="depositMoney">
+		<button type="button" onclick="checkForm()">입금</button>
+	</form>
+</body>
+</html>
