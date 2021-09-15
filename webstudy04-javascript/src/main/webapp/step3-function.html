@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript function</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//함수 정의 
+	function hello(){
+			console.log("hello 함수실행");
+			alert("hello 함수실행");
+		}
+	function bye(message){
+		alert(message);
+	}
+	function testParam(info,num){
+		alert(info+" "+num);
+	}
+	</script>
+	javascript function(함수) 테스트<br><br>
+	<input type="button" value="함수테스트1" onclick="hello()">
+	<input type="button" value="함수테스트2" onclick="bye('안녕')">
+	<input type="button" value="함수테스트3" onclick="testParam('감사',7)">
+</body>
+</html>

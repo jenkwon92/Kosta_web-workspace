@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript 변수 선언</title>
+<script type="text/javascript">
+	// var을 이용한 변수 선언
+	// 중복 선언이 가능
+	var a = 1;
+	var a = 2;
+	alert(a);
+	
+	//ECMA6(2015) 에서 추가된 let을 이용한 변수 선언
+	let b = 1;
+	//let은 중복 선언이 불가
+	//let b = 2; //SyntaxError: Identifier 'b' has already been step2-variable.html:14 declared
+	b = 2; //재할당은 가능
+	alert(b);
+	
+	//ECMA6(2015) 에서 추가된 const를 이용한 상수 선언
+	const c = 1;
+	//상수이므로 재할당은 불가능함
+	//c = 2; //step2-variable.html:22 Uncaught TypeError: Assignment to constant variable.
+	alert(c);
+</script>
+</head>
+<body>
+자바스크립트 변수 var, let, const 테스트
+</body>
+
+</html>
