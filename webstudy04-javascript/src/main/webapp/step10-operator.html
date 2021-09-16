@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript 연산자</title>
+<script type="text/javascript">
+	function test() {
+		//ecma6 (2015) block level scope 변수 선언시 사용
+		let name1 = "즐추석";
+		let name2 = "즐추석 ";
+		console.log(name1.length); //3
+		console.log(name2.length); //4
+		console.log(name1 == name2); //문자열 비교 false
+		console.log(name2.trim().length);
+		console.log(name1 == name2.trim()); //true:trim()으로 양여백을 제거
+
+		//var : function level scope, 기존에 사용하는 변수 선언
+		var age1 = 21; //정수형
+		var age2 = "21"; //문자열
+		console.log(age1 == age2); // true 비교연산자 == (강제 형변환)
+		console.log(age1 === age2); //false 비교연산자 === (타입체크 , 엄격한 비교)
+		var age3 = age1+2;
+		console.log(age3);
+		var age4 = age2+2;
+		console.log(age4); //212 문자열이므로
+		var age5 = parseInt(age2)+2; //parseInt()로 정수형으로 변환해서 연산
+		console.log(age5);//23
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="확인" onclick="test()">
+</body>
+</html>
