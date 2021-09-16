@@ -34,7 +34,7 @@ JSP : Java Server Page
 							
 		JSP is a  Servlet-> JSP는 Web Container 에 의해 java class로 생성되어 컴파일, 실행되고 
 										이 자바 클래스는 Servlet Interface의 하위, HttpServlet class의 자식이다.	
-				
+						(Web Container를 가지고 있는 것은 WAS)
 				
 				
 				
