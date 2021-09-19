@@ -29,7 +29,7 @@ JSP : Java Server Page
 		Model : 비즈니스 로직과 데이터 액세스 로직을 담당
 					Java Beans (or Java Component) : Service, DAO,DTO,VO...
 		View : 클라이언트에게 동적인 화면을 제공	 :JSP
-		Controller : 제어자의 역할, 클라이어느의 요청을 분석, 그에 대한 Model 연동 후 
+		Controller : 제어자의 역할, 클라이언트의 요청을 분석, 그에 대한 Model 연동 후 
 							적절한 View를 선택해 응답하게 하는 역할		
 							
 		JSP is a  Servlet-> JSP는 Web Container 에 의해 java class로 생성되어 컴파일, 실행되고 
