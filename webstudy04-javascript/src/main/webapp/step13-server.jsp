@@ -11,6 +11,7 @@
 	step13-submit.html의 form에서 submit했을 때 서버가 응답한다는 것을 단지 확인하기 위한 것이고 이후에 
 	자세히 수업할 예정입니다.
 -->
+
 서버에서 정보를 전달받아 응답한다 <br><br>
 별명 :<%=request.getParameter("nick") %> 나이: <%=request.getParameter("age") %>
 </body>
