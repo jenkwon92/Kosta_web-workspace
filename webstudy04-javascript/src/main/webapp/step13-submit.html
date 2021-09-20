@@ -14,8 +14,8 @@
  		return confirm("전송하시겠습니까?"); //confirm()은 확인 누르면 true, 취소 누르면 false를 반환한다
  	}
  </script>
-<form action="step13-server.jsp" onsubmit="return confirmForm()"><!-- return false인 경우에는 전송되지 않는다 -->
-별명 <input type="text" name="nick" required="required"><br> <!--required="required"를 사용하면 꼭 입력해야한다는 경고창이 나타난다-->
+<form action="step13-server.jsp" onsubmit="return confirmForm()"> <!-- return false인 경우에는 전송되지 않는다 -->
+별명 <input type="text" name="nick" required="required"><br>  <!--required="required"를 사용하면 꼭 입력해야한다는 경고창이 나타난다-->
 나이 <input type="number" name="age" required="required"><br> 
 <!-- <input type=submit value="전송"> -->
 <!-- 별도의 type을 지정하지 않으면 submit이 기본이다 -->
