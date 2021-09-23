@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html form checkbox와 Servlet연동</title>
+</head>
+<body>
+<form method="get" action="CheckboxServlet">
+<input type="checkbox" name="menu" value="치킨">치킨<br>
+<input type="checkbox" name="menu" value="피자">피자<br>
+<input type="checkbox" name="menu" value="맥주">맥주<br>
+<button type="submit">주문하기</button>	
+</form>
+<!-- 
+	치킨과 맥주를 체크하고 주문하기를 누르면
+	서블릿에서는
+	치킨 맥주 주문완료
+ -->
+</body>
+</html>

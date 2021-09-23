@@ -45,7 +45,7 @@ JSP : Java Server Page
 web.xml의 서블릿 설정 부분
   <servlet>
   	<servlet-name>basic</servlet-name>  <!-- 서블릿 별칭-->
-  <servlet-class>step1.BasicServlet</servlet-class> <!-- 패키지명, 클래스명-->
+  	<servlet-class>step1.BasicServlet</servlet-class> <!-- 패키지명, 클래스명-->
   </servlet>
   <servlet-mapping>
   	<servlet-name>basic</servlet-name>  <!-- 위 서블릿을 지칭 -->
@@ -54,5 +54,17 @@ web.xml의 서블릿 설정 부분
   
   Http Request Method (요청 방식)
   1. get 방식 : 정보 조회용 , url 상에 전송 정보가 노출됨, 전송 데이터 용량에 제한
-  2. post 방식 : 정보 전달용(주로 서버 자원의 데이터 변경시 사용),  url 상에 전송 정보가 노출되지 않고, http request body 부분에 저장되어 전송, 전송 데이터 용량 제한 x
+  2. post 방식 : 정보 전달용(주로 서버 자원의 데이터 변경시 사용),  url 상에 전송 정보가 노출되지 않고, 
+  						http request body 부분에 저장되어 전송(별도의 한글처리가 필요), 전송 데이터 용량 제한 x
 				
+
+ - client (html form)과 server(servlet) 연동
+ 
+ client 																				Server
+ <form action="url pattern" method="get">
+ <input type="text" name="food">										url pattern에 해당하는 서블릿의 doGet 메서드가 실행
+ <input type="submit" value="주문">									클라이언트가 보낸 정보를 입력받기 위해 
+ </form>																			request.getParameter(name) 즏 requestgetParameter("food")과 같이 입력받는다
+ 
+ submit 을 누르면 아래와 같은 형식으로 전송된다 
+ http://localhost:8888/webstudy06-servlet-basic/utl-patttern?name=value&name=value
