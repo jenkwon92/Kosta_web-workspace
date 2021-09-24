@@ -105,7 +105,7 @@ web.xml의 서블릿 설정 부분
  						    <--response--		   |					 			|
  						  								   |					 		객체 생성(서블릿 생성)
  						  								   |						 		|
- 						  								   |							init() 호출
+ 						  								   |							init(ServletConfig) 호출
  														   |								|
  														yes - - - - ->		service(request, response) 호출 - - > doGet() or doPost()
  						  								   			
@@ -119,6 +119,16 @@ web.xml의 서블릿 설정 부분
  		service() 몇번 실행? 10번
  		destroy() 몇번 실행?  서비스 종료 (was 중지) 직전에 1번 실행
  
- 
- 
+ -ServletConfig
+ 	개별 서블릿의 설정 정보를 저장하는 객체
+ 	서블릿 당 하나 생성
+ 	WEb Container (Servlet Container)에 의해 init 호출시점에 ServletConfig 객체가 주입된다
+ 	초기 파라미터(init-param) , ServletContext 객체 주소값 등이 ServletConfig에 저장되어 전달된다
+ 	ex) 사원(서블릿) 당 사원증(SerlvetConfig) 하나
+ 	
+ 	- ServletContext 
+ 		웹 어플리케이션 내의 모든 서블릿과 jsp가 공유하는 자원 (필요시 정보를 set/get할 수 있다)
+ 		웹 어플리케이션 당 하나 생성
+ 		웹애플리케이션 시작 시점에 생성되고 종료 직전에 소멸된다
+ 		ex) 회사(web application) 사내 인트라넷( ServletContext)
  

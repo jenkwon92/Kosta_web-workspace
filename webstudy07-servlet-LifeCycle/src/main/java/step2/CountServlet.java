@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CountServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private int count;
-	private String path="C:\\kosta224\\iotest\\count.txt";
+	private String path="C:\\kosta224\\iotest\\count";
 
 	public CountServlet() {
 		super();
@@ -43,7 +43,7 @@ public class CountServlet extends HttpServlet {
 		}else {
 			count++;			
 		}
-		System.out.println("init 실행");
+		System.out.println("init 실행" +count);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
