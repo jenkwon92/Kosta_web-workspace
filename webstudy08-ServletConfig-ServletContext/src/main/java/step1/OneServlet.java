@@ -38,8 +38,10 @@ public class OneServlet extends HttpServlet {
 		//웹 어플리케이션 공유 자원인 ServletContext 객체에 접근하여
 		//특정 정보를 할당해본다
 		ServletContext context = config.getServletContext();
-		context.setAttribute("notice","OneServlet이 할당한 정보");
+		context.setAttribute("notice","admin@kosta.or.kr");
 		out.println("<a href=TwoServlet> TwoServlet 에서 확인</a>");
+		out.println("<hr>");
+		out.println("ServletContext의 초기 파라미터"+config.getServletContext().getInitParameter("appSecurity"));
 		out.close();
 	}
 
