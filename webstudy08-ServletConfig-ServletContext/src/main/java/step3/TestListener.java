@@ -17,17 +17,17 @@ public class TestListener implements ServletContextListener {
     }
 
 	/**
-     * @see ServletContextListener#contextDestroyed(ServletContextEvent)
+     * web application 종료 직전에 호출
      */
     public void contextDestroyed(ServletContextEvent arg0)  { 
-         // TODO Auto-generated method stub
+    	System.out.println("contextDestroyed");
     }
 
 	/**
-     * @see ServletContextListener#contextInitialized(ServletContextEvent)
+     * web application 시작 시점에 호출
      */
     public void contextInitialized(ServletContextEvent arg0)  { 
-         // TODO Auto-generated method stub
+    	System.out.println("contextInitialized");
     }
 	
 }
