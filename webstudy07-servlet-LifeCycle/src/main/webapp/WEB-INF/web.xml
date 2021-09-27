@@ -60,7 +60,7 @@
 		<description></description>
 		<display-name>ContextTest2</display-name>
 		<servlet-name>ContextTest2</servlet-name>
-		<servlet-class>step2.ContextTest2</servlet-class>
+		<servlet-class>step5.ContextTest2</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ContextTest2</servlet-name>
