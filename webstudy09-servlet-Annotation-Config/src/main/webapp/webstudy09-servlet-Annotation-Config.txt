@@ -161,6 +161,18 @@ webstudy08-ServletConfig-ServletContext
 										contextInitialized(event) :웹 어플리케이션 시작 시점에 호출되어 실행되는 메서드
 										contextDestroyed(event) :웹 어플리케이션 종료 직전에 호출되어 실행되는 메서드
 
+**********************************************************************
+webstudy09-servlet-Annotation-Config
+
+-Servlet Annotation : 서블릿 3.0 이상에서 지원하는 기술
+	@WebServlet(url-pattern) -> 이 어노테이션을 서블릿 상단부에 명시하면 기존 web.xml의 url-pattern 설정과 동일한 효과를 가짐
+	
+	어노테이션 (@) : 의미있는 주석, 컴파일 및 런타임 시점에 시스템에 영향을 주기 위한 의미있는 주석이다
+	
+	설정 정보( 메타 데이터) 
+	1) XML : 소스코드와 설정의 분리 
+	2) Annotation : 소스코드 상에 설정정보를 기술
+	일반적으로 전역적인 설정은 xml 에 기술, 설계시 확정되는 부분은 Annotation 으로 설정(선택적)
 
 
 
