@@ -26,8 +26,9 @@ public class TestListener implements ServletContextListener {
 	/**
      * web application 시작 시점에 호출
      */
-    public void contextInitialized(ServletContextEvent arg0)  { 
-    	System.out.println("contextInitialized");
+    public void contextInitialized(ServletContextEvent event)  { 
+    	String security = event.getServletContext().getInitParameter("appSecurity");
+    	System.out.println("contextInitialized security info" +security);
     }
 	
 }

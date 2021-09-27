@@ -156,6 +156,10 @@ WAS 가 변경되더라도 특정한 프로그램의 수정없이 배포되어 �
 ****************************************************************
 webstudy08-ServletConfig-ServletContext
 
+- ServletContextListener : 웹 어플리케이션 LifeCycle event 발생시 (웹어플리케이션 시작 이벤트, 종료 이벤트) 실행되는 메서드를 가진 Interface
+										웹 어플리케이션 자원에서 시작 시점에 필요한 초기화 작업과 종료 시점에 필요한 백업, 로깅 작업을 처리하는데 용이하다 
+										contextInitialized(event) :웹 어플리케이션 시작 시점에 호출되어 실행되는 메서드
+										contextDestroyed(event) :웹 어플리케이션 종료 직전에 호출되어 실행되는 메서드
 
 
 
