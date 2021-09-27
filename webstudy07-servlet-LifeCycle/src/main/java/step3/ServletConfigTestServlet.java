@@ -19,6 +19,7 @@ public class ServletConfigTestServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print("<h3>ServletConfig study </h3>");
 		String name = this.getServletConfig().getServletName();
+		
 		out.println("ServletConfig 로 부터 Servlet Name을 반환받음: "+name );
 		String frameworkConfig = getServletConfig().getInitParameter("contextConfigLocation");
 		out.println("<hr>framework 설정파일 : "+frameworkConfig);

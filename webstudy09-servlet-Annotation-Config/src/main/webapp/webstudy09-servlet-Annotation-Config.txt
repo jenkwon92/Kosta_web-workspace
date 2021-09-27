@@ -39,7 +39,7 @@ JSP : Java Server Page
 	webstudy06-servlet-basic
 	
 	Deployment Descriptor ( DD ) :   WEB-INF/web.xml -> 웹어플리케이션의 설정 정보를 기술   
-	배포          기술서                  WAS 는 웹어플리케이션 실행 첫 시점에 DD(web.xml) 정보를 로드하여 
+	배포 기술서 WAS 는 웹어플리케이션 실행 첫 시점에 DD(web.xml) 정보를 로드하여 
 										   서비스에 반영한다         	 
 	web.xml 의 서블릿 설정 부분 
  <servlet>
