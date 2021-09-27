@@ -36,27 +36,50 @@ public class MemberCountServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		try {
-			//JDBC를 이용한 데이터베이스와의 연동
-			Connection con = DriverManager.getConnection(url, "scott", "tiger");
+			// JDBC를 이용한 데이터베이스와의 연동
+			con = DriverManager.getConnection(url, "scott", "tiger");
 			String sql = "SELECT COUNT(*) FROM member";
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			ResultSet rs = pstmt.executeQuery();
-			int count =0;
-			if(rs.next()) 
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			int count = 0;
+			if (rs.next())
 				count = rs.getInt(1);
-			
-			//실제 클라이언트에게 서비스하기 위한 부분
+
+			// 실제 클라이언트에게 서비스하기 위한 부분
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
-			out.println("총회원수 : "+count+"명");
+			out.println("총회원수 : " + count + "명");
 			out.close();
-			
-			rs.close();
-			pstmt.close();
-			con.close();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
 		}
 	}
 }
