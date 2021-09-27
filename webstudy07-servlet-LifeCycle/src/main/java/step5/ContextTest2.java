@@ -27,7 +27,7 @@ public class ContextTest2 extends HttpServlet {
     //즉 ServletConfig를 할당받지 못했으므로 ServletContext를 사용할 수없다는 것을 확인해보는 코드
     public void init(ServletConfig config) throws ServletException {
     	System.out.println("test를 위해 ServletConfig를 할당받는 init을 오버라이드 한다 "+config.getServletContext());
-    	//ServletConfig를 할당받아 포기화하는 작업을 고의로 생략해본다.
+    	//ServletConfig를 할당받아 초기화하는 작업을 고의로 생략해본다.
     	//다시 할당받는 코드를 명시해본다 
     	super.init(config);
     }
