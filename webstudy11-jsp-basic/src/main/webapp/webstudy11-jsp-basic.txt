@@ -259,6 +259,33 @@ HttpSession(or Session) : 사용자 상태 정보를 서버 측에 저장
                                           				if(session!=null&&session.getAttribute("mvo")!=null){
                                              					로그인한 사용자
                                           				}
+                                          				
+******************************************************************	
+webstudy11-jsp-basic
+
+JSP : Java Server Page
+		동적인 웹페이지를 위한 기술
+		서블릿과는 다르게 HTML 상에서 자바코드(or jsp tag)를 삽입하는 형태로 개발
+		JSP는 WAS(Web Container) 에 의해 java로 생성도고 컴파일되어 실행된다
+		(생성된 java class는 HttpServlet의 자식 클래스이다, JSP is a Servlet)
+		생성된 자바 파일은 tomcat/work 디렉코리에 저장된다 
+		
+Model2 Architecture MVC 에서는 Model은 java beans, View는 JSP, Container 는 Servlet이 담당한다 
+
+JSP 기본 문법
+1) 주석 <%--  --%> 참고) html주석 <!--  -->
+2) scriptlet 스크립틀릿 <% java code %> service 메서드 내에 자바 코드로 삽입
+3) expression <%=		%> out.print()의 역할, 화면 출력용
+4) declaration 선언 <%!		%>  멤버 변수, 메서드 정의시 사용
+5) direction 지시자 <%@		> jsp 문서 정보를 웹컨에이너에 전달, 한글처리방식 , 문서 타입, import, errorPage등을 기술
+
+src/main/java -> java main class
+src/main/webapp -> html, javascript, css, jsp
+src/main/webapp/web-inf -> .xml(설정 문서)
+src/main/webapp/web-inf/lib -> maven, …(외부 오픈소스 라이브러리)
+
+		
+		
 		
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
