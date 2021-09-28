@@ -207,11 +207,18 @@ Cookie :  사용자 상태 정보를 클라이언트 측에 저장
 				Cookie 유효 시간을 별도로 설정하지 않으면 브라우저 실행시에만 유효
 				Cookie 유효 시간을 설정하면 그 유효 시간 내에서만 Cookie를 사용할 수 있다
 
+1. 서버측에서 쿠키를 생성해서 클라이언트에게 전달하여 클라이언트측에 쿠키가 저장
+2. 클라이언트가 접속하면 서버측에서 클라이언트의 쿠키를 확인해서 특정쿠키(name 이 time인) 의 value를 얻어와 화면 출력
+
 client (browser) -- request --> SetCookieServlet
 												Cookie 생성( new Cookie(name,value))
 												cookie.setMaxAge(30); //30초 동안 해당 쿠키가 유효하도록 설정
 												response.addCookie(cookie); //클라이언트 측으로 쿠키를 전송
 						<-- response -- 						
+
+
+client(browser) --request--> GetCookieServlet
+											request.getCookies() :Cookie[] //client로 부터 쿠키 정보를 배열로 반환
 
 HttpSession(or Session) : 사용자 상태 정보를 서버 측에 저장
 										저장 용량 및 데이터 타입의 제한은 없다
