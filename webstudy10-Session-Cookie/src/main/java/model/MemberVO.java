@@ -1,6 +1,12 @@
 package model;
 
-public class MemberVO {
+import java.io.Serializable;
+/*
+ * implements Serializable : 세션에 저장되는 MemberVO 객체가 서버 reloadable(stop) 시에 직렬화되어 저장되기 위해
+ * 
+ */
+public class MemberVO implements Serializable {
+	private static final long serialVersionUID = -6805409069148241417L;
 	private String id;
 	private String password;
 	private String name;
