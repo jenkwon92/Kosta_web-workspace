@@ -7,6 +7,6 @@
 <title>query string</title>
 </head>
 <body>
-<a href="step2-2-querystring-action.jsp?no=2">step2 action test1</a>
+<a href="step2-2-querystring-action.jsp?no=2&food=갈비">step2 action test1</a>
 </body>
 </html>

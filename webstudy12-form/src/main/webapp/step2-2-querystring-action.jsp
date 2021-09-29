@@ -7,6 +7,7 @@
 <title>step2-2-querystring-action</title>
 </head>
 <body>
-client 가 보낸 no : <%=request.getParameter("no") %>
+client 가 보낸 no : <%=request.getParameter("no") %><br>
+client 가 보낸 food : <%=request.getParameter("food") %>
 </body>
 </html>
