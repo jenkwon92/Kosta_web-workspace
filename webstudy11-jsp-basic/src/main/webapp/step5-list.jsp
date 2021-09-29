@@ -17,14 +17,14 @@ list.add(new FoodVO("참이슬", "진로", 1400));
 </head>
 <body>
 	<table>
-		<thread>
+		<thead>
 		<tr>
 			<th>순번</th>
 			<th>이름</th>
 			<th>제조사</th>
 			<th>가격</th>
 		</tr>
-		</thread>
+		</thead>
 		<tbody>
 			<%
 			for (int i = 0; i < list.size(); i++) {

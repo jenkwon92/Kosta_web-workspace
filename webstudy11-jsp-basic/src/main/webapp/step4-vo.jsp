@@ -15,9 +15,11 @@ FoodVO vo = new FoodVO("3분카페", "오뚜기", 1200);
 <body>
 	<table>
 		<thead>
-			<th>name</th>
-			<th>maker</th>
-			<th>price</th>
+			<tr>
+				<th>name</th>
+				<th>maker</th>
+				<th>price</th>
+			</tr>
 		</thead>
 		<tbody>
 			<tr>
