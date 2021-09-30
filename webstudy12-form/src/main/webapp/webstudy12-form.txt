@@ -122,11 +122,11 @@ WAS 가 변경되더라도 특정한 프로그램의 수정없이 배포되어 �
   											
   client browser --request-->			is loaded? -- no --> class loading
   				   <--response--				|						|	
-  				   								| 					  객체 생성 ( 서블릿 생성 ) 
-												|						|  											   
-  											   	|					  init(ServletConfig) 호출 	
-  											   	|						|
-  											  yes ------>	   service(request,response) --> doGet() or doPost() 	
+  				   									| 					  객체 생성 ( 서블릿 생성 ) 
+													|						|  											   
+  											   		|					  init(ServletConfig) 호출 	
+  											   		|						|
+  												  yes ------>	   service(request,response) --> doGet() or doPost() 	
   											  
   											  						destroy() : 해당 서블릿이 서비스 종료 ( WAS 종료시 ) 되기 직전에 호출 	
   											    
@@ -295,6 +295,17 @@ client browser --request --> is loaded? -- no --> jsp 를 이용해 .java로 생
 													
 													destroy() -- jspDestroy() --> WAS 종료직전에 호출 
 
+***********************************************************************************
+webstudy12-form
+
+-Query String(쿼리스트링) : 질의하는 문자열
+
+http://localhost:8888/webstudy12-form2/step2-2-querystring-action.jsp?no=2&food=갈비
+
+URL? Query String (name=value$name=value)
+
+? : URL 주소와 Query String을 구분
+& : 여러쌍의 데이터를 전달할 때 사용
 
 
 src/main/java -> java main class
