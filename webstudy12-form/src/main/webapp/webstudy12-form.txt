@@ -307,6 +307,27 @@ URL? Query String (name=value$name=value)
 ? : URL 주소와 Query String을 구분
 & : 여러쌍의 데이터를 전달할 때 사용
 
+javascript event 처리 관련
+onclick : form 요소에 마우스 클릭했을 때 발생하는 이벤트
+onchange : form 요소의 value가 변경되었을 떄 발생하는 이벤트
+onsubmit : form 전송시 발생하는 이벤트
+onkeyup : 키보드의 키를 눌렀다가 뗄 때 발생하는 이벤트
+
+client side script									server side script
+browser					 	--request--> 
+															Servlet/JSP (동적으로 웹문서(html/css/javascript)를 생성해서 응답)
+html/css/javascript 		<--resposne--
+
+
+ex)														alert("<%=name%>님 어린이 영화...");
+									<---------------	jsp는 서버측에서 실행되어 문자열로 응답한다
+alert("이강인님 어린이 영화...");
+위 코드를 서버측에서 전달받아 브라우저가 해석해서 
+화면에 반영한다
+
+
+
+
 
 src/main/java -> java main class
 src/main/webapp -> html, javascript, css, jsp
