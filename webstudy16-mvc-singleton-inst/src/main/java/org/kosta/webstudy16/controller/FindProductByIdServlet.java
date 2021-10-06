@@ -30,11 +30,10 @@ public class FindProductByIdServlet extends HttpServlet {
 			if (vo == null) {
 				path = "find-fail.jsp";
 			} else {
-				path = "find-ok.jsp";
 				request.setAttribute("ProductVO", vo);
+				path = "find-ok.jsp";
 			}
 			request.getRequestDispatcher(path).forward(request, response);
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

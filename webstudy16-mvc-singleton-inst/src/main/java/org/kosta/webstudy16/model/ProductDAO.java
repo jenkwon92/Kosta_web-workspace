@@ -61,4 +61,22 @@ public class ProductDAO {
 		}
 		return vo;
 	}
+	
+	public void registerProduct(ProductVO vo ) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DriverManager.getConnection(url,username,password);
+			String sql = "INSERT INTO web_product(id,name,maker,price) VALUES(web_product_seq.nextval,?,?,?)";
+			pstmt= con.prepareStatement(sql);
+			pstmt.setString(1, vo.getName());
+			pstmt.setString(2, vo.getMaker());
+			pstmt.setInt(3, vo.getPrice());
+			
+			pstmt.executeUpdate();
+		}finally {
+			closeAll(pstmt, con);
+		}
+		
+	}
 }
