@@ -46,11 +46,15 @@ public class ProductDAO {
 		try {
 			con = DriverManager.getConnection(url, username, password);
 			String sql ="SELECT id,name,maker,price FROM web_product WHERE id=?";
+			//String sql ="SELECT name,maker,price FROM web_product WHERE id=?"; //강사님 코드
 			pstmt = con.prepareStatement(sql);
+			// int pid = Integer.parseInt(id); //강사님 코드
+			// pstmt.setInt(1,pid);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				vo = new ProductVO(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getInt(4));
+				//vo = new ProductVO(pid, rs.getString(1), rs.getString(2),rs.getInt(3));
 			}
 		}finally {
 			closeAll(rs, pstmt, con);

@@ -25,10 +25,11 @@ public class FindProductByIdServlet extends HttpServlet {
 		try {
 			ProductDAO dao = ProductDAO.getInstance();
 			ProductVO vo = dao.findProductById(id);
+			//  ProductVO vo = ProductDAO.getInstance().findProductById(id);  //강사님 코드
 			String path = null;
-			if (vo == null) { // 아이디에 대한 회원정보가 존재하지 않으면
+			if (vo == null) {
 				path = "find-fail.jsp";
-			} else { // 존재하면
+			} else {
 				path = "find-ok.jsp";
 				request.setAttribute("ProductVO", vo);
 			}
