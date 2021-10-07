@@ -81,7 +81,7 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
-		try {
+		try {	
 			con = DriverManager.getConnection(url,username,userpass);
 			String sql = "SELECT id,name,address FROM member WHERE address=?";
 			pstmt= con.prepareStatement(sql);
