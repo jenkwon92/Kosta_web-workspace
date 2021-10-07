@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="org.kosta.webstudy18.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -10,7 +11,7 @@
 </head>
 <body>
 <%
-	MemberVO vo = (MemberVO)request.getAttribute("MemberVO");
+	ArrayList<MemberVO> list = (ArrayList<MemberVO>)request.getAttribute("MemberList");
 %>
 <div class="container">
 <h3>검색결과</h3>

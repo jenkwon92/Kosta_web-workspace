@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MemberDAO {
 	private static MemberDAO instance=new MemberDAO();
@@ -71,5 +72,25 @@ public class MemberDAO {
 			closeAll(rs,pstmt, con);
 		}
 		return vo;
+	}
+	
+	public ArrayList<MemberVO> findMemberListByAddress(String address) throws SQLException {
+		Connection con= null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		try {
+			con = DriverManager.getConnection(url,username,userpass);
+			String sql = "SELECT id,name,address FROM member WHERE address=?";
+			pstmt= con.prepareStatement(sql);
+			pstmt.setString(1, address);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				list.add(new MemberVO(rs.getString(1),null,rs.getString(2),rs.getString(3)));
+			}
+		}finally {
+			closeAll(rs,pstmt, con);
+		}
+		return list;
 	}
 }

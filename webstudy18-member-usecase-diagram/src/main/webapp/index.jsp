@@ -36,7 +36,7 @@
 <input type="button" value="로그아웃" onClick="location.href='logout-ok.jsp'">
 <br><br>
 <%-- 4. 주소로 회원검색 --%>
-<form action="FindMemberByIdServlet">
+<form action="FindMemberListByAddressServlet">
 <input type="text" name="memberAddress" required="required" placeholder="주소">
 <button type="submit">검색</button>
 </form>

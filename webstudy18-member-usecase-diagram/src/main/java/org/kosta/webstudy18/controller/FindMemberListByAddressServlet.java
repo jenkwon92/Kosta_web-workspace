@@ -1,11 +1,17 @@
 package org.kosta.webstudy18.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.kosta.webstudy18.model.MemberDAO;
+import org.kosta.webstudy18.model.MemberVO;
 
 /**
  * Servlet implementation class FindMemberListByAddressServlet
@@ -13,29 +19,15 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/FindMemberListByAddressServlet")
 public class FindMemberListByAddressServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public FindMemberListByAddressServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String address = request.getParameter("memberAddress");
+		try {
+			ArrayList<MemberVO> list = MemberDAO.getInstance().findMemberListByAddress(address);
+			request.setAttribute("MemberList", list);
+			request.getRequestDispatcher("findbyaddress-result.jsp").forward(request, response);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }
