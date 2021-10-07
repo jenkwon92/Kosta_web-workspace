@@ -1,3 +1,4 @@
+<%@page import="org.kosta.webstudy18.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,6 +24,23 @@
 <input type="password" name="memberPass" required="required" placeholder="비밀번호">
 <button type="submit">검색</button>
 </form>
+<br>
+<% 
+	MemberVO vo = (MemberVO) session.getAttribute("MemberVO");
+	if(vo!=null){
+%>
+	<%=vo.getName() %>님 로그인 중입니다.
+<%}else{ %>
+	로그인 되어있지 않습니다
+<%} %>
+<input type="button" value="로그아웃" onClick="location.href='logout-ok.jsp'">
+<br><br>
+<%-- 4. 주소로 회원검색 --%>
+<form action="FindMemberByIdServlet">
+<input type="text" name="memberAddress" required="required" placeholder="주소">
+<button type="submit">검색</button>
+</form>
+
 </div>
 </body>
 </html>

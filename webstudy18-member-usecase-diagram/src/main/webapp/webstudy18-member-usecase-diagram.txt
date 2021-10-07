@@ -518,6 +518,21 @@ ex) 도서 검색 Use Case 에서 신착도서검색 Use Case, 간행물검색 U
 					
 					Controller - FindMemberByIdServlet, LoginServlet, LogoutServlet, FindMemberListByAddressServlet , UpdateMemberServlet
 										RegisterMemberServlet , IdCheckServlet
+										
+										
+로그인, 로그아웃
+1) 로그인
+index.jsp --- LoginServlet --- MemberDAO      ------------------- Database
+                  |               login(id,password) : MemberVO
+                  |
+                  |
+               로그인 실패할 경우 login-fail.jsp 에서 로그인 실패 alert 후 index.jsp로 이동
+               로그인 성공할 경우 index.jsp로 이동, 로그인 폼 대신 누구님 메세지와 아래 라인에 로그아웃 링크를 보여준다
+2) 로그아웃
+index.jsp ---- LogoutServlet
+                  |
+                  | 로그아웃 처리 후
+                  index.jsp로 이동(누구님 메세지와 로그아웃 링크 대신 로그인폼을 제공한다)
 
 
 
