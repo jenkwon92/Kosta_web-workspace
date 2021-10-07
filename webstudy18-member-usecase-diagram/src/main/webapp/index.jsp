@@ -17,6 +17,8 @@
 <button type="submit">검색</button>
 </form>
 <br>
+<hr>
+<br>
 <%-- 2. 로그인 --%>
 로그인
 <form action="LoginServlet"  method="post">
@@ -30,17 +32,27 @@
 	if(vo!=null){
 %>
 	<%=vo.getName() %>님 로그인 중입니다.
+	<input type="button" value="로그아웃" onClick="location.href='logout-ok.jsp'">
 <%}else{ %>
 	로그인 되어있지 않습니다
 <%} %>
-<input type="button" value="로그아웃" onClick="location.href='logout-ok.jsp'">
-<br><br>
+<br>
+<hr>
+<br>
 <%-- 4. 주소로 회원검색 --%>
 <form action="FindMemberListByAddressServlet">
 <input type="text" name="memberAddress" required="required" placeholder="주소">
 <button type="submit">검색</button>
 </form>
-
+<br>
+<hr>
+<br>
+<%-- 5. 회원정보수정 --%>
+<form action="UpdateMemberServlet">
+<input type="text" name="memberAddress" required="required" placeholder="비밀번호">
+<input type="text" name="memberAddress" required="required" placeholder="주소">
+<button type="submit">수정</button>
+</form>
 </div>
 </body>
 </html>

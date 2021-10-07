@@ -13,10 +13,12 @@ public class MemberDAO {
 	private String url="jdbc:oracle:thin:@127.0.0.1:1521:xe";
 	private String username="scott";
 	private String userpass = "tiger";
+	
 	private MemberDAO() {}
 	public static MemberDAO getInstance() {
 		return instance;
 	}
+	
 	public void closeAll(PreparedStatement pstmt, Connection con) throws SQLException {
 		if(pstmt!=null) {
 			pstmt.close();

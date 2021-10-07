@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 			if (vo != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("MemberVO", new MemberVO(vo.getId(), null, vo.getName(), vo.getAddress()));
-				url = "login-ok.jsp";
+				url = "index.jsp";
 			} else {
 				url = "login-fail.jsp";
 			}
