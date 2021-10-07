@@ -87,6 +87,7 @@ public class MemberDAO {
 			pstmt= con.prepareStatement(sql);
 			pstmt.setString(1, address);
 			rs = pstmt.executeQuery();
+			
 			if(rs.next()) {
 				list.add(new MemberVO(rs.getString(1),null,rs.getString(2),rs.getString(3)));
 			}
