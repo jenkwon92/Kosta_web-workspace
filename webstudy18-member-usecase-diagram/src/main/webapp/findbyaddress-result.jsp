@@ -23,7 +23,9 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td><%=vo.getId() %></td><td><%=vo.getName() %></td><td><%=vo.getAddress() %></td>
+		<%for(int i=0; i<list.size(); i++){ %>
+			<td><%=list.get(i).getId() %></td><td><%=list.get(i).getName() %></td><td><%=list.get(i).getAddress() %></td>
+		<%} %>
 		</tr>
 	</tbody>
 </table>
