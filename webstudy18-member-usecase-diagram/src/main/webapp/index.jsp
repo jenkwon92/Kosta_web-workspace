@@ -32,7 +32,13 @@
 	if(vo!=null){
 %>
 	<%=vo.getName() %>님 로그인 중입니다.
-	<input type="button" value="로그아웃" onClick="location.href='logout-ok.jsp'">
+	<br><br>
+<form action="LogoutServlet">
+	<button type="submit" >로그아웃</button>
+</form>
+<form action="update-form.jsp">
+	<button type="submit" >회원정보수정</button>
+</form>
 <%}else{ %>
 	로그인 되어있지 않습니다
 <%} %>
@@ -47,12 +53,6 @@
 <br>
 <hr>
 <br>
-<%-- 5. 회원정보수정 --%>
-<form action="UpdateMemberServlet">
-<input type="text" name="memberAddress" required="required" placeholder="비밀번호">
-<input type="text" name="memberAddress" required="required" placeholder="주소">
-<button type="submit">수정</button>
-</form>
 </div>
 </body>
 </html>

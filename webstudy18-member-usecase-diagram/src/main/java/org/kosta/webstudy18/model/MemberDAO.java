@@ -62,13 +62,13 @@ public class MemberDAO {
 		ResultSet rs = null;
 		try {
 			con = DriverManager.getConnection(url,username,userpass);
-			String sql = "SELECT id,password,name,address FROM member WHERE id=? AND password=?";
+			String sql = "SELECT name,address FROM member WHERE id=? AND password=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, password);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				vo = new MemberVO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4));
+				vo = new MemberVO(id,password,rs.getString(1),rs.getString(2));
 			}
 		}finally {
 			closeAll(rs,pstmt, con);
@@ -88,12 +88,42 @@ public class MemberDAO {
 			pstmt.setString(1, address);
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) {
+			while(rs.next()) {
 				list.add(new MemberVO(rs.getString(1),null,rs.getString(2),rs.getString(3)));
 			}
 		}finally {
 			closeAll(rs,pstmt, con);
 		}
 		return list;
+	}
+	
+	public void updateMember(MemberVO vo) throws SQLException {
+		Connection con= null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DriverManager.getConnection(url,username,userpass);
+			String sql = "UPDATE member SET name=? ,password=? , address=? WHERE id=?";
+			pstmt= con.prepareStatement(sql);
+			pstmt.setString(1, vo.getName());
+			pstmt.setString(2, vo.getPassword());
+			pstmt.setString(3, vo.getAddress());
+			pstmt.setString(4, vo.getId());
+			pstmt.executeUpdate();
+		}finally {
+			closeAll(pstmt, con);
+		}
+	}
+	
+	public MemberVO idCheckServlet() {
+		MemberVO vo = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			
+		}finally {
+			
+		}
+		return vo;
 	}
 }
