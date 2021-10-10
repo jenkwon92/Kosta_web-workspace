@@ -25,10 +25,9 @@ public class LoginServlet extends HttpServlet {
 		String id = request.getParameter("memberId");
 		String pass = request.getParameter("memberPass");
 
-		MemberVO vo;
-		String url = null;
 		try {
-			vo = MemberDAO.getInstance().login(id, pass);
+			MemberVO vo = MemberDAO.getInstance().login(id, pass);
+			String url = null;
 			if (vo != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("MemberVO", new MemberVO(vo.getId(), null, vo.getName(), vo.getAddress()));

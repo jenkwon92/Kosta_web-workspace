@@ -114,15 +114,22 @@ public class MemberDAO {
 		}
 	}
 	
-	public MemberVO idCheckServlet() {
+	public MemberVO idCheckServlet(String id) throws SQLException {
 		MemberVO vo = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		
+		ResultSet rs = null;
 		try {
-			
+			con = DriverManager.getConnection(url,username, userpass);
+			String sql = "SELECT name,address FROM member WHERE id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo = new MemberVO(id,rs.getString(1),null, rs.getString(2));
+			}
 		}finally {
-			
+			closeAll(rs, pstmt, con);
 		}
 		return vo;
 	}
