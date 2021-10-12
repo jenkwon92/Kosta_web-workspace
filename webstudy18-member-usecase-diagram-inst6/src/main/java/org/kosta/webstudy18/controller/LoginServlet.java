@@ -33,7 +33,10 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("mvo", vo);//세션에 인증정보를 할당한다 
 				url="index.jsp";
 			}
-			response.sendRedirect(url);
+			response.sendRedirect(url); //forward 새로고침 재동작 --login 새로고침  로그인재동작 
+			//forward 는 가능하지만 새로고침하면 로그인재시도를 함  --> 바람직하지 않음
+			//request 정보 공유를하지않음
+			//둘다 가능하지만 forward 로 했을때 장점이 없음
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

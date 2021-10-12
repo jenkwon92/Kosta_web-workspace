@@ -119,6 +119,25 @@ public class MemberDAO {
 			closeAll(pstmt, con);
 		}
 	}
+	
+	public boolean idCheck(String id) throws SQLException {
+		boolean result=false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = DriverManager.getConnection(url,username, userpass);
+			String sql = "SELECT COUNT(*) FROM member WHERE id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()&&rs.getInt(1)==1) //조회정보가 1이면 아이디가 존재하므로 true 할당
+				result = true;
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return result;
+	}
 }
 
 
