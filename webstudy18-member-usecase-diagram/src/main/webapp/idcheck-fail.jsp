@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%= session.getAttribute("id")%>는 중복! 사용불가 
+<button>확인</button>
 
 </body>
 </html>

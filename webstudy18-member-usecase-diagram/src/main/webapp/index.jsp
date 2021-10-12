@@ -52,6 +52,10 @@
 </form>
 <br>
 <hr>
+
+
+<%-- 5.회원가입 --%>
+<a href="register-form.jsp">회원가입</a>
 <br>
 </div>
 </body>

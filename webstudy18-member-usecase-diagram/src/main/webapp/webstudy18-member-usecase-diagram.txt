@@ -555,7 +555,16 @@ index.jsp ---- update-form.jsp ----- UpdateMemberServlet ------------- MemberDAO
                   <input type="text" name="id" readonly="readonly" value="세션에 저장된 회원아이디">
                   <%-- readonly는 수정불가, 읽기전용 --%>    
 
-
+5) 회원가입 
+	
+	index.jsp --- register-form.jsp 	-------------- RegisterMemberServlet ---- MemberDAO				-- DB
+					비밀번호와 																				register(MemberVO)
+					비밀번호 확인란을 입력하게 해					doPost()
+					일치할 때 가입하게 한다 						|
+																				| redirect
+																				|
+																    register-result.jsp
+																    ( 회원가입을 축하합니다 ) 	
 
 
 
