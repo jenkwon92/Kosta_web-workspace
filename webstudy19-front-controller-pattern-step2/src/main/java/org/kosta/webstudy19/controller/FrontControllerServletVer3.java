@@ -38,7 +38,7 @@ public class FrontControllerServletVer3 extends HttpServlet {
 			} else if (command.equals("findCarListByMaker")) {
 					controller = new FindCarListByMakerController();
 			} else if (command.equals("registerCar")) {
-					
+				controller = new RegisterCarController();
 			}
 			//인터페이스를 통한 계층구조 형성으로 단일한 메세지 방식(execute()) 으로 다양한 컨트롤러 구현체들을 실행할 수 있다
 			String path = controller.execute(request, response);

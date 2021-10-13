@@ -15,7 +15,7 @@
 																registercar-result.jsp
  --%>
   <form action="FrontControllerServlet" method="post">
-      <input type="hidden" name="hidden" value="registerCar">
+      <input type="hidden" name="command" value="registerCar">
       <input type="text" name="carInfo" placeholder="차정보"  required="required">
       <button type="submit">등록</button>
  </form>
