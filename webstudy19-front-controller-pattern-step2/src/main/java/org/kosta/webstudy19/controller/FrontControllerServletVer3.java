@@ -42,7 +42,10 @@ public class FrontControllerServletVer3 extends HttpServlet {
 			}
 			//인터페이스를 통한 계층구조 형성으로 단일한 메세지 방식(execute()) 으로 다양한 컨트롤러 구현체들을 실행할 수 있다
 			String path = controller.execute(request, response);
-			request.getRequestDispatcher(path).forward(request, response);
+			if(path.startsWith("redirect:"))//path가 redirect: 으로 시작되면 redirect 방식으로 응답한다 
+				response.sendRedirect(path.substring(9));  //redirect: 을 제외한 path로 이동시킨다
+			else //아니면 forward
+				request.getRequestDispatcher(path).forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 			// Exception 발생할 경우 클라이언트에세 error.jsp를 제공한다
