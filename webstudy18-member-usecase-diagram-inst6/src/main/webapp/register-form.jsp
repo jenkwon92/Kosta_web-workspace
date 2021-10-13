@@ -21,6 +21,7 @@
 			alert("패스워드와 패스워드 확인이 일치하지 않습니다");
 			return false; //false를 리턴하면 전송되지 않는다 
 		}
+		
 		//인증받은 아이디 (hidden 에 저장되어 있는 value) 와 input text에 입력된 아이다와 
 		//일치하지 않으면 가입시키지 않는다 
 		if(document.getElementById("flag").value!=document.getElementById("id").value){
