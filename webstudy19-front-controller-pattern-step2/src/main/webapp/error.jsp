@@ -9,6 +9,6 @@
 <body bgcolor="yellow">
 <%-- 시스템에서 문제가 발생할 경우 현 페이지를 클라이언트에게 제공한다 --%>
 <h3>시스템 점검중^^ 콘솔을 확인하세요</h3>
-<!-- <img src="image/기랑언니.png"> -->
+<img src="image/원빈.jpg">
 </body>
 </html>
