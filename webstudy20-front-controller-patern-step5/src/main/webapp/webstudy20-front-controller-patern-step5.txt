@@ -687,12 +687,46 @@ ver3 : 개별 요청 허리를 변도의 클래스에서 담당
 	webstudy20-front-controller-pattern-step3 에서는 step2까지 설계 구현한 내용을 
 	다시 한번 구현
 
+*********************************************************************************************
+webstudy20-front-controller-pattern-step4
 
+기존 step3 구조
+	client -- FrontControllerServlet -- Controller Interface
+																		|									|
+																		FindCarController 		RegisterCarController
+
+	개선점 : 만약 서비스가 추가되거나 변경되어야 한다면ㄴ
+				FrontControllerServlet 의 컨트롤러 객체 생성부는 추가되거나 변경되어야 한다 
+				FrontControllerServlet 과 컨트롤러 객체의 결ㄹ합도는 높은 상태 
+				-> 이를 해결하기 위해 컨트롤러 객체 생성을 전담하는 HandlerMapping을 정의한다
 	
+	step4
+			client -- FrontControllerServlet --- HanlderMapping ---	Controller Interface
+																								    			|									|
+																									FindCarController 		RegisterCarController
+			컨트롤러 영역의요소 
+			FrontControllerServlet : 모든 클라이언트의 요청을 통합하는 진입점의 역할을 하는 서블릿
+			HandlerMapping : 개별 컨트롤러 구현체들의 생성을 전담하는 객체 (Factory)
+										(spring framework 에서도 이런 역하을 하는 객체를 HandlerMapping 이라고 말한다)
+			
+			Controller Interface : 컨트롤러 구현체들의 상위 인터페이스, 캡슐화, 표준화, 다형성 지원
+			
+			개발 Controller 구현체 : 실제 클라이언트의 요청을 처리하는 객체							
 	
+	step5
+	step4에서 HandlerMapping 을 추가하여 컨트롤러 객체 생성을 전담시켰다
+	개선점 :  이후 서비스가 확장되어 컨트롤러가 추가될 경우 매번 HandlerMapping의 create 메서드의
+					객체 생성하는 부분의 코드가 변경(추가)되어야 한다
+					-> Reflection API 를 이용해 컨트롤러 객체 생성을 런타임시에 자동화 시키도록 프로그램을 업데이트한다
 	
+	Reflection : 런타임 시점에 동적으로 객체를 제어 (지금은 동적으로 객체를 생성하는 것으로 사용)
+	테스트 예제 ->test.reflection.TestAutoCreateInstance 에서 확인한 후 HandlerMapping 이 반영
 	
-	
+client --- FrontControllerServlet --- HandlerMapping---Controller Interface
+																							|											|
+																					FindCustomerByIdController	RegisterCustomerController
+
+
 	
 				                                          		 	
 

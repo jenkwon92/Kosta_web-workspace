@@ -28,5 +28,13 @@
 		<input type="text" name="customerInfo" placeholder="고객정보" required="required">
 		<button type="submit">등록</button>
 	</form>
+	<br><br>
+	<form action="FrontControllerServlet" method="post">
+		<input type="hidden" name="command" value="updateCustomer">
+		<input type="text" name="customerInfo" placeholder="고객정보" required="required">
+		<button type="submit">수정</button>
+	</form>
+	<br><br><br>
+	<img src="iage/frontcontroller.png">
 </body>
 </html>

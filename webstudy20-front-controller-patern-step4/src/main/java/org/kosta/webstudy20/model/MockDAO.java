@@ -16,4 +16,8 @@ public class MockDAO {
 	public void registerCustomer(String customerInfo) {
 		System.out.println("고객정보등록: "+customerInfo+"db에 insert");
 	}
+	
+	public void updateCustomer(String customerInfo) {
+		System.out.println("고객정보수정: "+customerInfo +"db에 update" );
+	}
 }
